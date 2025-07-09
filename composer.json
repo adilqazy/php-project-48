@@ -1,0 +1,21 @@
+{
+    "name": "hexlet/code",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "keep silent",
+            "email": "learn.fllutter@gmail.com"
+        }
+    ],
+    "bin": [
+        "bin/gendiff"
+    ],
+    "require": {}
+    
+}

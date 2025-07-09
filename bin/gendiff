@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+
+$argv = $_SERVER['argv'];
+
+$helpMessage = <<<HELP
+Generate diff
+
+Usage:
+  gendiff (-h|--help)
+  gendiff (-v|--version)
+
+Options:
+  -h --help                     Show this screen
+  -v --version                  Show version
+
+HELP;
+
+if (in_array('-h', $argv) || in_array('--help', $argv)) {
+    echo $helpMessage . PHP_EOL;
+    exit(0);
+}
+
+if (in_array('-v', $argv) || in_array('--version', $argv)) {
+    echo "gendiff version 1.0.0" . PHP_EOL;
+    exit(0);
+}
+
+echo "Run gendiff -h to see usage" . PHP_EOL;
