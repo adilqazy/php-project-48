@@ -9,10 +9,12 @@ Generate diff
 Usage:
   gendiff (-h|--help)
   gendiff (-v|--version)
+  gendiff [--format <fmt>] <firstFile> <secondFile>
 
 Options:
   -h --help                     Show this screen
   -v --version                  Show version
+  --format <fmt>                Report format [default: stylish]
 
 HELP;
 
@@ -23,6 +25,11 @@ if (in_array('-h', $argv) || in_array('--help', $argv)) {
 
 if (in_array('-v', $argv) || in_array('--version', $argv)) {
     echo "gendiff version 1.0.0" . PHP_EOL;
+    exit(0);
+}
+
+if (in_array('--format', $argv)) {
+    echo "" . PHP_EOL;
     exit(0);
 }
 
