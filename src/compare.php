@@ -6,7 +6,7 @@ use function Funct\Collection\sortBy;
 function compare($data1, $data2): string
 {
     $allKeys = sortBy(array_unique(array_merge(array_keys($data1), array_keys($data2))), function ($sort) {
-        return $sort[$key];
+        return $sort;
     });
 
     $lines = [];

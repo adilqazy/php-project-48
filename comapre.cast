@@ -1,0 +1,11 @@
+{"version": 2, "width": 154, "height": 18, "timestamp": 1752511205, "env": {"SHELL": "/bin/zsh", "TERM": "xterm-256color"}}
+[0.032282, "o", "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                                                                         \r \r"]
+[0.03271, "o", "\r\u001b[0m\u001b[27m\u001b[24m\u001b[Jadilkazyalmanbet@Adilkazys-Air php-project-48 % \u001b[K\u001b[?2004h"]
+[2.186634, "o", "gendiff -f /json/file1.json file2.json"]
+[3.494462, "o", "\u001b[27D\u001b[6P\u001b[21C      \b\b\b\b\b\b"]
+[4.135216, "o", "\u001b[?2004l\r\r\n"]
+[4.239866, "o", "/Users/adilkazyalmanbet/all_repos/php-project-48/bin/gendiff:58:\r\nstring(104) \"- follow: false\r\n  host: 'hexlet.io'\r\n- proxy: '123.234.53.22'\r\n- timeout: 50\r\n+ timeout: 20\r\n+ verbose: true\"\r\n"]
+[4.243571, "o", "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                                                                         \r \r"]
+[4.243635, "o", "\r\u001b[0m\u001b[27m\u001b[24m\u001b[Jadilkazyalmanbet@Adilkazys-Air php-project-48 % \u001b[K\u001b[?2004h"]
+[10.903544, "o", "\u001b[?2004l"]
+[10.903606, "o", "\r\r\n"]
