@@ -53,9 +53,10 @@ for ($i = 0; $i < count($argv); $i++) {
     $file1 = Hexlet\Code\parse($projectRoot . '/json/' . $files[2]);
     $file2 = Hexlet\Code\parse($projectRoot . '/json/' . $files[3]);
 
-    print_r($file1);
-    print_r($file2);
-    //echo $file1;
+    $compared = Hexlet\Code\compare($file1, $file2);
+
+    var_dump($compared);
+    //var_dump($file1, $file2);
     exit(0);
 }
 
