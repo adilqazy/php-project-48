@@ -15,8 +15,8 @@ foreach ($lines as $line) {
     if (strpos($line, 'PHP Deprecated:') === false &&
         strpos($line, 'PHP Stack trace:') === false &&
         strpos($line, 'Call Stack:') === false &&
-        !preg_match('/^\s*[0-9]+/', $line) &&
-        !preg_match('/^\s*PHP\s+[0-9]+/', $line) &&
+        !preg_match('/^\s*\d+/', $line) &&
+        !preg_match('/^\s*PHP\s+\d+/', $line) &&
         trim($line) !== '') {
         $filtered[] = $line;
     }

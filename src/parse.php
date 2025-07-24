@@ -9,5 +9,5 @@ function parse($path)
     }
     $contents = file_get_contents($path);
     $data = json_decode($contents);
-    return $keys = (get_object_vars($data));
+    return (get_object_vars($data));
 }
