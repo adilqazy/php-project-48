@@ -34,6 +34,13 @@ jobs:
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
+        with:
+          args: >
+            -Dsonar.projectKey=php-project-48
+            -Dsonar.organization=your-org-name
+            -Dsonar.sources=src
+            -Dsonar.tests=tests
+            -Dsonar.php.coverage.reportPaths=build/logs/clover.xml
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Run PHPUnit tests
