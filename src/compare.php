@@ -1,6 +1,7 @@
 <?php
 
 namespace Hexlet\Code;
+
 use function Funct\Collection\sortBy;
 
 function compare($data1, $data2): string
@@ -11,8 +12,7 @@ function compare($data1, $data2): string
 
     $lines = [];
 
-    foreach ($allKeys as $key)
-    {
+    foreach ($allKeys as $key) {
         $val1 = $data1[$key] ?? null;
         $val2 = $data2[$key] ?? null;
 
@@ -30,8 +30,5 @@ function compare($data1, $data2): string
         }
     }
 
-    //$sorted = sortBy($lines, function ($sort) {
-    //    return $sort[$key];
-    //});
     return implode(PHP_EOL, $lines);
 }

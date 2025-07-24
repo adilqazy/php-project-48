@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ruleset name="MyProject">
+  <description>Ruleset</description>
+
+  <!-- Каталоги или файлы для сканирования -->
+  <file>src</file>
+  <file>bin</file>
+
+  <!-- Игнорировать папку vendor -->
+  <exclude-pattern>vendor</exclude-pattern>
+  <exclude-pattern>vendor/*</exclude-pattern>
+
+  <!-- Здесь можно указать используемые стандарты -->
+  <rule ref="PSR12"/>
+</ruleset>
