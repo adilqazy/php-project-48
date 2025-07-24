@@ -37,7 +37,7 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=php-project-48
-            -Dsonar.organization=your-org-name
+            -Dsonar.organization=adilqazy
             -Dsonar.sources=src
             -Dsonar.tests=tests
             -Dsonar.php.coverage.reportPaths=build/logs/clover.xml
