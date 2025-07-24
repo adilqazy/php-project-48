@@ -36,3 +36,5 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Run PHPUnit tests
+        run: ./vendor/bin/phpunit
