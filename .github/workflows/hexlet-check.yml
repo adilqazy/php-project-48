@@ -31,7 +31,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Для точного анализа SonarQube
-
+      - name: Run PHPUnit tests
+        run: ./vendor/bin/phpunit
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         with:
@@ -43,5 +44,3 @@ jobs:
             -Dsonar.php.coverage.reportPaths=build/logs/clover.xml
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      - name: Run PHPUnit tests
-        run: ./vendor/bin/phpunit
