@@ -24,6 +24,8 @@ jobs:
         uses: hexlet/project-action@release
         with:
           hexlet-id: ${{ secrets.HEXLET_ID }}
+      - name: Install dependencies
+        run: composer install
 
   sonarqube:
     runs-on: ubuntu-latest
