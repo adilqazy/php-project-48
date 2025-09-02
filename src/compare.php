@@ -2,13 +2,13 @@
 
 namespace Hexlet\Code;
 
-use function Funct\Collection\sortBy;
+//use function Funct\Collection\sortBy;
 
 function compare($data1, $data2): string
 {
-    $allKeys = sortBy(array_unique(array_merge(array_keys($data1), array_keys($data2))), function ($sort) {
-        return $sort;
-    });
+    $allKeys = array_merge(array_keys($data1), array_keys($data2));
+    $allKeys = array_unique($allKeys);
+    sort($allKeys);
 
     $lines = [];
 
@@ -31,56 +31,4 @@ function compare($data1, $data2): string
     }
 
     return implode(PHP_EOL, $lines);
-}
-
-function genDiff(string $firstFile, string $secondFile): string
-{
-    // Парсим файлы
-    $data1 = json_decode(file_get_contents($firstFile), true);
-    $data2 = json_decode(file_get_contents($secondFile), true);
-    
-    // Получаем все ключи
-    $allKeys = array_unique(array_merge(array_keys($data1), array_keys($data2)));
-    sort($allKeys);
-    
-    $lines = ['{'];
-    
-    foreach ($allKeys as $key) {
-        $exists1 = array_key_exists($key, $data1);
-        $exists2 = array_key_exists($key, $data2);
-        
-        if ($exists1 && $exists2) {
-            if ($data1[$key] === $data2[$key]) {
-                // Без изменений
-                $lines[] = "    {$key}: " . formatValue($data1[$key]);
-            } else {
-                // Изменено
-                $lines[] = "  - {$key}: " . formatValue($data1[$key]);
-                $lines[] = "  + {$key}: " . formatValue($data2[$key]);
-            }
-        } elseif ($exists1) {
-            // Удалено
-            $lines[] = "  - {$key}: " . formatValue($data1[$key]);
-        } else {
-            // Добавлено
-            $lines[] = "  + {$key}: " . formatValue($data2[$key]);
-        }
-    }
-    
-    $lines[] = '}';
-    
-    return implode("\n", $lines);
-}
-
-function formatValue($value): string
-{
-    if (is_bool($value)) {
-        return $value ? 'true' : 'false';
-    }
-    
-    if (is_null($value)) {
-        return 'null';
-    }
-    
-    return (string) $value;
 }
