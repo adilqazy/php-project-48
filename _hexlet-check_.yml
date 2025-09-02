@@ -40,11 +40,8 @@ jobs:
           mkdir -p build/logs
           mkdir -p build/coverage
 
-      - name: Debug vendor/bin
-        run: ls -la vendor/bin
-
-      - name: Run PHPUnit tests
-        run: composer exec phpunit -- --colors=always
+      - name: Run PHPUnit tests #with coverage
+        run: ./vendor/bin/phpunit
 
   sonarqube:
     runs-on: ubuntu-latest
@@ -70,7 +67,7 @@ jobs:
           mkdir -p build/coverage
 
       - name: Run PHPUnit tests with coverage
-        run: composer exec phpunit -- --coverage-clover build/logs/clover.xml
+        run: ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
